@@ -36,7 +36,7 @@ export default function ReviewDetails() {
 
       <small>console list</small>
 
-      {/* <p>{data.review.body}</p> */}
+      <p>{review.attributes.body}</p>
     </div>
   );
 }

@@ -36,8 +36,7 @@ const { loading, error, data } = useQuery(REVIEWS)
           <h2>{review.attributes.title}</h2>
 
           <small>console list</small>
-
-          {/* <p>{review.body.substring(0, 200)}...</p> */}
+          <p>{review.attributes.body.substring(0, 200)}...</p>
           <Link to={`/details/${review.id}`}>Read more</Link>
         </div>
       ))}

@@ -11,9 +11,12 @@ const CATEGORY = gql`
           name
           reviews {
             data {
+                id,
+
               attributes {
                 title
-                rating
+                rating,
+                body,
                 categories {
                   data {
                     id
@@ -52,6 +55,8 @@ export default function Category() {
           {review.attributes.categories.data.map((c) => (
             <small key={c.id}>{c.attributes.name}</small>
           ))}
+        <p>{review.attributes.body.substring(0, 200)}...</p>
+
           <Link to={`/details/${review.id}`}>Read Review</Link>
         </div>
       ))}
